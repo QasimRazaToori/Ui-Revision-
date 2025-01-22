@@ -1,0 +1,94 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Flutter Layout Example'),
+        ),
+        body: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                Container(
+                  color: Colors.blue,
+                  height: 100,
+                  width: 100,
+                  child: Center(
+                    child: Text(
+                      'Container',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Container(
+                      color: Colors.red,
+                      height: 50,
+                      width: 50,
+                    ),
+                    Container(
+                      color: Colors.green,
+                      height: 50,
+                      width: 50,
+                    ),
+                    Container(
+                      color: Colors.yellow,
+                      height: 50,
+                      width: 50,
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20),
+                Expanded(
+                  child: Stack(
+                    children: [
+                      Container(
+                        color: Colors.grey,
+                      ),
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Container(
+                          color: Colors.purple,
+                          height: 50,
+                          width: 50,
+                        ),
+                      ),
+                      Align(
+                        alignment: Alignment.center,
+                        child: Container(
+                          color: Colors.orange,
+                          height: 50,
+                          width: 50,
+                        ),
+                      ),
+                      Align(
+                        alignment: Alignment.bottomRight,
+                        child: Container(
+                          color: Colors.pink,
+                          height: 50,
+                          width: 50,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
