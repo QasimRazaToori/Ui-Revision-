@@ -1,0 +1,51 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Center(
+              child: Text(
+            'Hello Laibe Salam',
+            style:
+                TextStyle(fontWeight: FontWeight.bold, color: Colors.blueGrey),
+          )),
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(0),
+          child: Transform(
+            transform: Matrix4.skewY(0)..rotateZ(0.1111111),
+            child: Container(
+              margin: EdgeInsets.all(120),
+              alignment: Alignment.topCenter,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                gradient: LinearGradient(
+                  colors: [Colors.red, Colors.blue],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+              ),
+              height: 800,
+              width: 1200,
+              child: Text(
+                "Laibe",
+                style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.yellowAccent),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
