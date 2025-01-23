@@ -1,0 +1,90 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAzzzState();
+}
+
+class _MyAzzzState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Qasim"),
+        ),
+        body: Expanded(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Container(
+                height: 100,
+                width: 200,
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(colors: [
+                  const Color.fromARGB(255, 10, 47, 90),
+                  const Color.fromARGB(255, 74, 5, 80)
+                ])),
+              ),
+              Container(
+                height: 100,
+                width: 200,
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(colors: [
+                  const Color.fromARGB(255, 10, 90, 37),
+                  const Color.fromARGB(255, 5, 63, 80)
+                ])),
+              ),
+              Container(
+                height: 100,
+                width: 200,
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(colors: [
+                  const Color.fromARGB(255, 10, 47, 90),
+                  const Color.fromARGB(255, 74, 5, 80)
+                ])),
+              ),
+              Container(
+                height: 100,
+                width: 200,
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(colors: [
+                  const Color.fromARGB(255, 143, 247, 165),
+                  const Color.fromARGB(255, 188, 37, 202)
+                ])),
+              ),
+              Container(
+                height: 100,
+                width: 200,
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(colors: [
+                  const Color.fromARGB(255, 111, 139, 65),
+                  const Color.fromARGB(255, 22, 80, 5)
+                ])),
+              ),
+              Expanded(
+                child: Container(
+                  height: 100,
+                  width: 200,
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(colors: [
+                    const Color.fromARGB(255, 10, 47, 90),
+                    const Color.fromARGB(255, 74, 5, 80)
+                  ])),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
