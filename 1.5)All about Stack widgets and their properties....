@@ -1,0 +1,60 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+          appBar: AppBar(
+            title: Center(child: Text('Qasim')),
+          ),
+          body: Center(
+            child: Stack(
+              clipBehavior: Clip.none,
+              children: [
+                Container(
+                  height: 200,
+                  width: 200,
+                  decoration: BoxDecoration(
+                      gradient:
+                          LinearGradient(colors: [Colors.purple, Colors.pink])),
+                ),
+                Container(
+                  height: 100,
+                  width: 100,
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(colors: [
+                    const Color.fromARGB(255, 155, 176, 39),
+                    const Color.fromARGB(255, 233, 30, 30)
+                  ])),
+                ),
+                Positioned(
+                  bottom: -25,
+                  right: -20,
+                  child: Container(
+                    height: 50,
+                    width: 50,
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(colors: [
+                      const Color.fromARGB(255, 39, 176, 92),
+                      const Color.fromARGB(255, 233, 30, 216)
+                    ])),
+                  ),
+                ),
+              ],
+            ),
+          )),
+    );
+  }
+}
