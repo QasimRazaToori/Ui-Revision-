@@ -1,0 +1,54 @@
+flutter:
+  assets:
+    - assets/fonts/
+
+  fonts:
+    - family: Diplomata                                                        //Download the fonts for Geogle Fonts 
+                                                                               //Make the Folder for Fonts and extract here
+      fonts:                                                                   //Make the Folder for Fonts in projects also like assests/fonts/......
+        - asset: assets/fonts/Diplomata-Regular.ttf                            //would be add in Pubspec.yaml....
+       
+                                                                                //Call in style text i.e Teextfamily 'Name';
+
+
+                                                                                
+//Coding...
+ 
+ 
+ 
+ import 'package:flutter/material.dart';
+                                                                             
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: Center(
+            child: Text(
+          'Qasim Raza',
+          style: TextStyle(
+            fontSize: 30,
+            fontFamily: 'Diplomata',
+            // fontWeight: FontWeight.w300, //w means width there
+            // background: Paint()..color = Colors.black,
+            // backgroundColor: const Color.fromARGB(255, 114, 7, 7),
+            // color: const Color.fromARGB(255, 180, 39, 39),
+            // letterSpacing: 6,
+            // wordSpacing: 10,
+            // decoration: TextDecoration.underline,
+            // shadows: [
+            //   Shadow(color: Colors.black, offset: Offset(2, 2), blurRadius: 5)
+          ),
+        )),
+      ),
+    );
+  }
+}
+
+                                                                                
