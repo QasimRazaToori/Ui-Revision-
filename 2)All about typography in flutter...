@@ -1,0 +1,30 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(Myapp());
+}
+
+class Myapp extends StatelessWidget {
+  const Myapp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        // body: Text(
+        //   'Qasim Raza is a flutter developer',
+        //   textAlign: TextAlign.left,
+        body: Text(
+          'Centered Text Centered Text Centered Text Centered Text vvCentered Text vCentered Text vvCentered Text Centered Text Centered Text vvCentered Text Centered Text Centered Text Centered Text vCentered Text vCentered Text Centered Text v',
+          textAlign: TextAlign.start,
+          // overflow: TextOverflow.ellipsis,
+          // maxLines: 2,
+          // softWrap: true,
+          // textWidthBasis: TextWidthBasis.parent,
+
+        ),
+      ),
+    );
+  }
+}
+
