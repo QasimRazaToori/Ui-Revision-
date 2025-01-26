@@ -1,0 +1,45 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: RichText(
+              text: TextSpan(
+                  text: ' Hello ',
+                  style: TextStyle(color: Colors.black, fontSize: 30),
+                  children: <TextSpan>[
+                TextSpan(
+                    text: ' I ',
+                    style: TextStyle(
+                        color: const Color.fromARGB(255, 174, 54, 244),
+                        fontSize: 30)),
+                TextSpan(
+                    text: ' am ',
+                    style: TextStyle(
+                        color: const Color.fromARGB(255, 146, 244, 54),
+                        fontSize: 30)),
+                TextSpan(
+                    text: ' Qasim ',
+                    style: TextStyle(
+                        color: const Color.fromARGB(255, 134, 17, 8),
+                        fontSize: 30)),
+                TextSpan(
+                    text: ' Raza ',
+                    style: TextStyle(
+                        color: const Color.fromARGB(255, 53, 42, 209),
+                        fontSize: 30)),
+              ])),
+        ),
+      ),
+    );
+  }
+}
