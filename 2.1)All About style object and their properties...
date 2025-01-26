@@ -1,0 +1,34 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: Center(
+            child: Text(
+          'Qasim Raza',
+          style: TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.w300, //w means width there
+            // background: Paint()..color = Colors.black,
+            // backgroundColor: const Color.fromARGB(255, 114, 7, 7),
+            color: const Color.fromARGB(255, 180, 39, 39),
+            letterSpacing: 6,
+            wordSpacing: 10,
+            decoration: TextDecoration.underline,
+            shadows: [
+              Shadow(color: Colors.black, offset: Offset(2, 2), blurRadius: 5)
+            ],
+          ),
+        )),
+      ),
+    );
+  }
+}
