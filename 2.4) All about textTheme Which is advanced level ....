@@ -1,0 +1,166 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  // Variable to track if the dark theme is enabled
+  bool _isDarkTheme = false;
+
+  // Toggle the theme mode (light/dark)
+  void _toggleTheme() {
+    setState(() {
+      _isDarkTheme = !_isDarkTheme;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter TextTheme Example',
+      theme: _isDarkTheme ? darkTheme : lightTheme,
+      home: MyHomePage(onToggleTheme: _toggleTheme),
+    );
+  }
+
+  // Light theme definition
+  ThemeData get lightTheme {
+    return ThemeData(
+      brightness: Brightness.light,
+      textTheme: TextTheme(
+        displayLarge: TextStyle(
+            fontSize: 32, fontWeight: FontWeight.bold, color: Colors.blue),
+        bodyLarge: TextStyle(fontSize: 18, color: Colors.black),
+        labelLarge: TextStyle(
+            fontSize: 16, fontWeight: FontWeight.w600, color: Colors.white),
+      ),
+      appBarTheme: AppBarTheme(
+        backgroundColor: Colors.blue,
+      ),
+    );
+  }
+
+  // Dark theme definition
+  ThemeData get darkTheme {
+    return ThemeData(
+      brightness: Brightness.dark,
+      textTheme: TextTheme(
+        displayLarge: TextStyle(
+            fontSize: 32, fontWeight: FontWeight.bold, color: Colors.orange),
+        bodyLarge: TextStyle(fontSize: 18, color: Colors.white),
+        labelLarge: TextStyle(
+            fontSize: 16, fontWeight: FontWeight.w600, color: Colors.black),
+      ),
+      appBarTheme: AppBarTheme(
+        backgroundColor: Colors.black,
+      ),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  final Function onToggleTheme;
+
+  MyHomePage({required this.onToggleTheme});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('TextTheme Example'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.brightness_6),
+            onPressed: () => onToggleTheme(), // Toggle theme on button press
+          ),
+        ],
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(16.0),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              // Using displayLarge from TextTheme
+              Text(
+                'This is a headline',
+                style: Theme.of(context).textTheme.displayLarge,
+              ),
+              SizedBox(height: 20),
+
+              // Using bodyLarge from TextTheme
+              Text(
+                'This is some body text.',
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
+              SizedBox(height: 20),
+
+              // Using labelLarge for button text from TextTheme
+              ElevatedButton(
+                onPressed: () {
+                  // Navigate to second page
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SecondPage()),
+                  );
+                },
+                child: Text('Go to Second Page',
+                    style: Theme.of(context).textTheme.labelLarge),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class SecondPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Second Page'),
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(16.0),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              // Using the same text theme
+              Text(
+                'This is a headline on the second page',
+                style: Theme.of(context).textTheme.displayLarge,
+              ),
+              SizedBox(height: 20),
+
+              // Using bodyLarge for body text
+              Text(
+                'This is some body text on the second page.',
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
+              SizedBox(height: 20),
+
+              // Button with labelLarge text style
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context); // Go back to the first page
+                },
+                child: Text('Back to First Page',
+                    style: Theme.of(context).textTheme.labelLarge),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
