@@ -1,0 +1,21 @@
+ ConstrainedBox(
+                constraints: BoxConstraints.tightFor(height: 30, width: 150),
+                child: ElevatedButton.icon(
+                  icon: Icon(Icons.bubble_chart_outlined),
+                  onPressed: () {
+                    if (uEmail.text.isNotEmpty && upass.text.isNotEmpty) {
+                      print('Email: ${uEmail.text}, Password: ${upass.text}');
+                    } else {
+                      print('Please fill out both fields');
+                    }
+                  },
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.black,
+                      elevation: 80,
+                      shadowColor: Colors.black,
+                      textStyle: TextStyle(fontStyle: FontStyle.normal)),
+                  label: Text(
+                    'Submit',
+                  ),
+                ),
+              ),
